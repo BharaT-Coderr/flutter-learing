@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
           child: Text("Welcome to my $day day code by $name sarkar"),
         ),
       ),
-      drawer: Drawer(),
+      drawer: const Drawer(),
     );
   }
 }
