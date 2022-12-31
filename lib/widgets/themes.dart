@@ -20,6 +20,14 @@ class MyTheme {
 
   // ignore: non_constant_identifier_names
   static ThemeData DarkTheme(BuildContext context) => ThemeData(
-        brightness: Brightness.dark,
-      );
+      brightness: Brightness.dark,
+      fontFamily: GoogleFonts.poppins().fontFamily,
+      // ignore: prefer_const_constructors
+      appBarTheme: AppBarTheme(
+          centerTitle: true,
+          color: Colors.white,
+          elevation: 0.0,
+          iconTheme: const IconThemeData(
+            color: Colors.white,
+          )));
 }
