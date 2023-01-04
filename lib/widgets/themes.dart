@@ -1,5 +1,8 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class MyTheme {
   // ignore: non_constant_identifier_names
@@ -30,4 +33,8 @@ class MyTheme {
           iconTheme: const IconThemeData(
             color: Colors.white,
           )));
+
+  static Color greyishWhite = const Color.fromRGBO(241, 250, 238, 100);
+
+  static Color veryDarkBlue = const Color(0xff403b58);
 }
