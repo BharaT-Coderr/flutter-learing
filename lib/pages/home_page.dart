@@ -3,13 +3,11 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_tutorial/pages/home_widgets/catalog_header.dart';
+import 'package:flutter_tutorial/pages/home_widgets/catalog_list.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'package:flutter_tutorial/models/catalog.dart';
-import 'package:flutter_tutorial/widgets/drawer.dart';
-import 'package:flutter_tutorial/widgets/themes.dart';
-
-import '../widgets/item_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -62,100 +60,5 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ));
-  }
-}
-
-class CatalogHeader extends StatelessWidget {
-  const CatalogHeader({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        "Catalog App".text.bold.color(MyTheme.veryDarkBlue).xl5.make(),
-        "Trending Products".text.bold.color(MyTheme.veryDarkBlue).xl2.make(),
-      ],
-    );
-  }
-}
-
-class CatalogList extends StatelessWidget {
-  const CatalogList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      itemCount: CatalogModel.item.length,
-      itemBuilder: (context, index) {
-        final catalog = CatalogModel.item[index];
-        return CatalogItem(catalog: catalog);
-      },
-    );
-  }
-}
-
-class CatalogItem extends StatelessWidget {
-  const CatalogItem({
-    Key? key,
-    required this.catalog,
-  }) : super(key: key);
-  final Item catalog;
-
-  @override
-  Widget build(BuildContext context) {
-    return VxBox(
-      child: Row(
-        children: [
-          CatalogImage(image: catalog.imageurl),
-          Expanded(
-              child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              catalog.name.text.bold.lg.color(MyTheme.veryDarkBlue).make(),
-              catalog.desc.text.textStyle(context.captionStyle).make(),
-              10.heightBox,
-              ButtonBar(
-                alignment: MainAxisAlignment.spaceBetween,
-                buttonPadding: EdgeInsets.zero,
-                children: [
-                  "\$${catalog.price}".text.bold.xl.make(),
-                  ElevatedButton(
-                    onPressed: (() {}),
-                    style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStateProperty.all(MyTheme.veryDarkBlue),
-                      shape: MaterialStateProperty.all(const StadiumBorder()),
-                    ),
-                    child: "Buy".text.make(),
-                  )
-                ],
-              ).pOnly(right: 8.0)
-            ],
-          ))
-        ],
-      ),
-    ).white.rounded.square(150).make().py16();
-  }
-}
-
-class CatalogImage extends StatelessWidget {
-  const CatalogImage({
-    Key? key,
-    required this.image,
-  }) : super(key: key);
-  final String image;
-
-  @override
-  Widget build(BuildContext context) {
-    return Image.network(image)
-        .box
-        .p8
-        .color(MyTheme.greyishWhite)
-        .make()
-        .p16()
-        .w40(context);
   }
 }

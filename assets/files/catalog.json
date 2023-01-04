@@ -6,7 +6,7 @@
             "desc": "Apple iPhone 13th generation",
             "price": 999,
             "color": "#33505a",
-            "imageurl": "https://cdn0.ispace.am/AfrOrF3gWeDA6VOlDG4TzxMv39O7MXnF4CXpKUwGqRM/resize:fill:540/bg:f6f6f6/q:100/plain/s3://catalog-products/220309095604442908/220311150025499842.png@webp"
+            "imageurl": "https://m.media-amazon.com/images/I/610pghkO81L._SX522_.jpg"
         },
         {
             "id": 2,
@@ -31,6 +31,14 @@
             "price": 1299,
             "color": "#33505a",
             "imageurl": "https://www.pngfind.com/pngs/m/258-2584696_ipad-pro-rentals-ipad-pro-12-9-2017.png"
+        },
+        {
+            "id": 5,
+            "name": "Pixel 7 Pro",
+            "desc": "Google Pixel 7th generation",
+            "price": 999,
+            "color": "#33505a",
+            "imageurl": "https://assets3.cbsnewsstatic.com/hub/i/2022/10/06/575f7228-22c2-4e8b-bb68-9dfb366aadd6/google-pixel-7.png"
         }
     ]
 }
