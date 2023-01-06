@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/models/catalog.dart';
-import 'package:flutter_tutorial/widgets/themes.dart';
 
 import 'package:velocity_x/velocity_x.dart';
 
@@ -12,10 +11,10 @@ class HomeDetialPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey[50],
+        backgroundColor: Colors.transparent,
       ),
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
@@ -25,15 +24,16 @@ class HomeDetialPage extends StatelessWidget {
               onPressed: (() {}),
               style: ButtonStyle(
                 backgroundColor:
-                    MaterialStateProperty.all(MyTheme.veryDarkBlue),
+                    // ignore: deprecated_member_use
+                    MaterialStateProperty.all(context.theme.buttonColor),
                 shape: MaterialStateProperty.all(const StadiumBorder()),
               ),
-              child: "Buy".text.lg.make(),
-            ).wh(100, 50),
+              child: "Add to cart".text.lg.make(),
+            ).wh(120, 50),
           ],
         ).p32(),
       ),
-      backgroundColor: Colors.blueGrey[50],
+      backgroundColor: context.canvasColor,
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -49,15 +49,21 @@ class HomeDetialPage extends StatelessWidget {
                 edge: VxEdge.TOP,
                 child: Container(
                   width: context.screenWidth,
-                  color: Colors.white,
+                  color: context.cardColor,
                   child: Column(
                     children: [
                       catalog.name.text.bold.xl4
-                          .color(MyTheme.veryDarkBlue)
+                          .color(context.accentColor)
                           .make(),
                       catalog.desc.text.xl
                           .textStyle(context.captionStyle)
                           .make(),
+                      10.heightBox,
+                      "Diam eirmod stet diam eirmod at est lorem sed diam, ipsum accusam duo justo lorem. Accusam et sed sadipscing et no sadipscing duo sed. Eos consetetur dolor sed nonumy dolore et at accusam, et stet aliquyam ea est voluptua at, ea stet et voluptua amet sanctus et clita amet. Sea."
+                          .text
+                          .textStyle(context.captionStyle)
+                          .make()
+                          .p16(),
                     ],
                   ).py64(),
                 ),

@@ -9,6 +9,13 @@ class CatalogModel {
         imageurl:
             "https://e7.pngegg.com/pngimages/599/150/png-clipart-iphone-x-front-view-apple%E6%89%8B%E6%9C%BA-iphone.png")
   ];
+
+  //Get Item by ID
+  static Item getById(int id) =>
+      item.firstWhere((element) => element.id == id, orElse: null);
+
+  // Get Item by position
+  static Item getByposition(int position) => item[position];
 }
 
 class Item {
