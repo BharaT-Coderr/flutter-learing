@@ -1,4 +1,10 @@
 class CatalogModel {
+  static final catalogModel = CatalogModel._internal();
+
+  CatalogModel._internal();
+
+  factory CatalogModel() => catalogModel;
+
   static List<Item> item = [
     Item(
         id: 1,
@@ -11,15 +17,15 @@ class CatalogModel {
   ];
 
   //Get Item by ID
-  static Item getById(int id) =>
+  Item getById(int id) =>
       item.firstWhere((element) => element.id == id, orElse: null);
 
   // Get Item by position
-  static Item getByposition(int position) => item[position];
+  Item getByposition(int position) => item[position];
 }
 
 class Item {
-  final num id;
+  final int id;
   final String name;
   final String desc;
   final num price;
