@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_tutorial/models/cartModel.dart';
 import 'package:flutter_tutorial/models/catalog.dart';
 import 'package:flutter_tutorial/pages/home_widgets/catalog_image.dart';
 import 'package:velocity_x/velocity_x.dart';
